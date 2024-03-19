@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from dnc import *
+from bf import *
 
 # Fungsi untuk mengecek apakah input adalah float yang valid atau tidak
 def isFloat(strings):
@@ -39,4 +40,14 @@ while not inputs.isdigit() or int(inputs) < 1  :
 
 iterasi = int(inputs)
 
-DNCmain(points,iterasi)
+# Memilih algoritma yang digunakan
+inputs = input("Pilih algoritma yang digunakan (1. Divide and Conquer 2. Brute Force) : ")
+while inputs != "1" and inputs != "2" :
+    print("Masukan tidak valid!")
+    inputs = input("Pilih algoritma yang digunakan (1. Divide and Conquer 2. Brute Force) : ")
+
+
+if inputs == "1" :
+    DNCmain(points,iterasi)
+else :
+    BFMain(points,iterasi)
